@@ -43,7 +43,7 @@ function getset(_obj) {
         case 1:
             var src = document.getElementsByName(_obj)[0].value
             if (src == "") {
-                src = "./res/noimage.svg"
+                src = "images/res/noimage.svg"
             }
             json[_obj][1] = src
             document.getElementById(_obj).setAttribute("src", json[_obj][1])
@@ -52,7 +52,7 @@ function getset(_obj) {
             // only supports dynamic image replacements, not text.
             var option = document.getElementsByName(_obj)[0].value
             json[_obj][1] = option
-            document.getElementById(_obj).setAttribute("src", "./res/" + _obj + "/" + json[_obj][1] + ".svg")
+            document.getElementById(_obj).setAttribute("src", "images/res/" + _obj + "/" + json[_obj][1] + ".svg")
             break
         default:
             break
