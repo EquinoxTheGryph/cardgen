@@ -34,7 +34,10 @@ input, select {
 /* Level 1 */
 .cardbase {
     background-color: #d30000;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.438) 0%,rgba(0,0,0,0.6) 100%), url("/res/background/charlie-brown.svg"); 
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.438) 0%, rgba(0,0,0,0.6) 100%), 
+        url("/res/background/charlie-brown.svg"), 
+        url("https://stcraft.github.io/cardgen/res/background/charlie-brown.svg"); 
     /* opacity: 40%; */
     height: 89mm;
     width: 64mm;
