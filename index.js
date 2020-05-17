@@ -43,7 +43,8 @@ function getset(_obj) {
         case 1:
             var src = document.getElementsByName(_obj)[0].value
             if (src == "") {
-                src = "images/res/noimage.svg"
+                //src = "res/noimage.svg"   // Non-github variant
+                src = "https://stcraft.github.io/cardgen/res/noimage.svg"
             }
             json[_obj][1] = src
             document.getElementById(_obj).setAttribute("src", json[_obj][1])
@@ -52,7 +53,8 @@ function getset(_obj) {
             // only supports dynamic image replacements, not text.
             var option = document.getElementsByName(_obj)[0].value
             json[_obj][1] = option
-            document.getElementById(_obj).setAttribute("src", "images/res/" + _obj + "/" + json[_obj][1] + ".svg")
+            //document.getElementById(_obj).setAttribute("src", "res/" + _obj + "/" + json[_obj][1] + ".svg") // Non-github variant
+            document.getElementById(_obj).setAttribute("src", "https://stcraft.github.io/cardgen/res/" + _obj + "/" + json[_obj][1] + ".svg")
             break
         default:
             break
