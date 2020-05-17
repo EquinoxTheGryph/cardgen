@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Card Creator</title>
+    <!-- TODO: Include font or use a different one -->
+    <meta content="">
+    <style></style>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" onload="on_load()"></script>
+  </head>
+  <body>
+    <div class="noprint">
+        <h1>Trading Card Generator</h1> 
+        <noscript>This needs JS to work!</noscript>
+        <p>Create your own trading card, and print it out!<br>
+            Enter your information below and press print!</p>
+    </div>
+    
+    <form class="inputarea noprint">
+        <b>-Basic information-</b>
+        <br>
+        <label for="cid">Card ID: #</label>
+        <input type="number" name="cid" min=1 size=1>
+        <br>
+        <label for="fname">Name:</label>
+        <input type="text" name="fname">
+        <br>        
+        <label for="sname">Surname:</label>
+        <input type="text" name="sname">
+        <br>
+        <label for="species">Species:</label>
+        <input type="text" name="species">
+        <br>
+        <label for="gender">Gender:</label>
+        <select name="gender">
+            <option value="">Choose...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="nonbinary">Nonbinary</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <label for="ownername">Character Owner:</label>
+        <input type="text" name="ownername">
+        <br>
+        <br>
+        <b>-Stats-</b>
+        <br>
+        <label for="element">Element:</label>
+        <select name="element">
+            <option value="">Choose...</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="shock">Shock</option>
+            <option value="ice">Ice</option>
+        </select>
+        <br>
+        <label for="suit">Suit:</label>
+        <select name="suit">
+            <option value="">Choose...</option>
+            <option value="heart">Heart</option>
+            <option value="diamond">Diamond</option>
+            <option value="club">Club</option>
+            <option value="spade">Spade</option>
+        </select>
+        <br>
+        <label for="stance">Battle Stance:</label>
+        <select name="stance">
+            <option value="">Choose...</option>
+            <option value="offense">Offense</option>
+            <option value="defence">Defence</option>
+        </select>
+        <br>
+        <label for="dice">Dice Number (1-20): </label>
+        <input type="number" name="dice" min=1 max=20 size=1>
+        <br>
+        <br>
+        <b>-Image-</b>
+        <br>
+        <label for="image">Image url:</label>
+        <input type="url" name="image">
+        <br>
+        <label for="artistname">Artist Credit:</label>
+        <input type="text" name="artistname">
+        <br>
+        <label for="xpos">X Position:</label>
+        <input type="range" name="xpos" min=-100 max=100 value=0 step=0.01 oninput="on_translation_changed()">
+        <br>
+        <label for="ypos">Y Position:</label>
+        <input type="range" name="ypos" min=-100 max=100 value=0 step=0.01 oninput="on_translation_changed()">
+        <br>
+        <label for="scale">Scale:</label>
+        <input type="range" name="scale" min=0 max=10 value=1 step=0.01 oninput="on_translation_changed()">
+        <br>
+        <br>
+        <b>-Background-</b>
+        <br>
+        /todo/
+
+        <br>
+        <br>
+        <!-- should be a js action! -->
+        <input type="button" value="Submit" onclick="on_submit()">
+    </form>
+    
+    <h2 class="noprint">Your Card:</h2>
+    <!-- ##################### -->
+    <!-- START OF CARD DISPLAY -->
+    <!-- ##################### -->
+    <div class="cardbase">
+        <div class="cardcontent">
+            <div class="cardtopcontent">
+                <div class="title">
+                    <div class="charname" id="fname">Missing</div>
+                    <div class="cardid" id="cid">###</div>
+                </div>
+                <div class="subtitle">
+                    <div class="charsurname" id="sname">Information</div>
+                    <img class="chargender" id="gender" src="" alt="#">
+                    <div class="charspecies" id="species">---</div>
+                </div>
+            </div>
+
+            <div class="cardmiddlecontent">
+                <div class="imagecontainer">
+                    <img 
+                        class="charimage" 
+                        id="image" 
+                        src="" 
+                        alt="Insert your character image here, using the URL box in the options above." 
+                        onload="on_translation_changed()"
+                    >
+                </div>
+                <!-- <div class="imagecontainer">image here</div> -->
+                <div class="cardstats">
+                    <div class="infobox dice">
+                        <img class="diceimage" src="/res/d20.svg">
+                        <div class="dicenumber" id="dice">---</div>
+                    </div>
+                    <div class="infobox suite">
+                        <img id="suit" src="" alt="---">
+                    </div>
+                    <div class="infobox element">
+                        <img id="element" src="" alt="---">
+                    </div>
+                    <div class="infobox battlestance">
+                        <img id="stance" src="" alt="---">
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="cardfootercontent">
+                <div class="charowner">Character by: <div id="ownername">---</div></div>
+                <div class="chartist">Art by: <div id="artistname">---</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="noprint">
+        <h2>Printing:</h2>
+        <input type="button" value="Print it out!" onclick="window.print()">
+        <p>Note: Enable these options (under the options tab in Firefox) to print out the cards correctly:</p>
+        <ul>
+            <li>Print Background Colors</li>
+            <li>Print Background Images</li>
+        </ul>
+    </div>
+  </body>
+</html>

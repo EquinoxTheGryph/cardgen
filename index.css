@@ -1,0 +1,187 @@
+@media screen {
+    body {
+        background-color: #444444;
+    }
+}
+
+@media print {
+    body {
+        background-color: none;
+    }
+
+    .noprint {
+        display: none;
+    }
+}
+
+
+* {
+    font-family: ubuntu;
+    line-break: strict;
+    color: white;
+    break-after: avoid;
+}
+
+.inputarea {
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+input, select {
+    color: black;
+}
+
+/* Level 1 */
+.cardbase {
+    background-color: #d30000;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.438) 0%,rgba(0,0,0,0.6) 100%), url("/res/background/charlie-brown.svg"); 
+    /* opacity: 40%; */
+    height: 89mm;
+    width: 64mm;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5mm;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Level 2 */
+.cardcontent {
+    margin: 2.5mm;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Level 3 */
+
+/* -- Top content */
+.cardtopcontent {
+    flex-shrink: 1;
+    background-color: rgba(0, 0, 0, 70%);
+    padding: 1mm;
+    border-radius: 2mm;
+}
+
+.title, .subtitle {
+    display: flex;
+}
+
+.subtitle {
+    opacity: 50%;
+}
+
+.cardid {
+    font-size: medium;
+    font-style: italic;
+    font-family: monospace;
+    flex: 1;
+    display: inline;
+    padding: 1mm;
+    opacity: 30%;
+}
+
+.cardid::before {
+    content: "#";
+}
+
+.charname {
+    flex: 100;
+    display: inline;
+    font-size: xx-large;
+}
+
+.charsurname {
+    flex: 1;
+}
+
+.chargender {
+    flex-shrink: 1;
+    max-height: 1em;
+    display: inline;
+    align-self: center;
+}
+
+.charspecies {
+    flex: 0;
+    display: inline;
+}
+
+
+/* -- Middle content */
+.cardmiddlecontent {
+    flex-grow: 2;
+    display: flex;
+    padding-top: 1mm;
+    padding-bottom: 1mm;
+}
+
+.imagecontainer {
+    flex-grow: 1;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 2mm;
+    position: relative;
+}
+
+.cardstats {
+    flex-shrink: 1;
+    padding-left: 1mm;
+}
+
+.charimage {
+    align-content: center;
+    flex: 1;
+    /* NOTE: move image around here */
+    /* transform: translate(-5mm, 0mm); */
+    /* scale: 2; */
+    /* background-color: #fff; */
+    display: block;
+    position: absolute;
+    max-height: 100%;
+}
+
+.infobox {
+    width: 10mm;
+    height: 10mm;
+    background-color: rgba(0, 0, 0, 70%);
+    /* border-style: solid; */
+    /* border-color: black; */
+    border-radius: 2mm;
+    text-align: center;    
+    margin: 0.5mm;
+    padding: 1mm;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diceimage {
+    position: absolute;
+}
+
+.dicenumber {
+    /* font-family: monospace; */
+    /* font-size: 1.2em; */
+    z-index: 100;
+}
+
+/* -- Footer content */
+.cardfootercontent {
+    flex-shrink: 1;
+    display: flex;
+}
+
+.charowner, .chartist{
+    flex: 1;
+    /* height: min-content; */
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 1mm;
+    font-size: xx-small;
+    text-align: center;
+    align-self: center;
+    padding: 0.1mm;
+    margin: 0.2mm;
+}
